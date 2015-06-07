@@ -1,0 +1,22 @@
+                 P    W    D    L    F    A   Pts
+
+Manchester_U    27   17    3    7   66   35   54 
+Liverpool       27   15    7    5   44   24   52 
+Newcastle       26   16    4    6   51   33   52 
+Arsenal         26   14    9    3   51   30   51 
+Chelsea         26   11   11    4   46   26   44 
+Leeds           26   11   10    5   37   29   43 
+Aston_Villa     26    9   11    6   32   29   38 
+Tottenham       26   10    5   11   37   35   35 
+Fulham          26    8   11    7   26   25   35 
+Charlton        26    8    9    9   30   32   33 
+Middlesbrough   26    8    7   11   26   34   31 
+Sunderland      26    8    7   11   21   30   31 
+West_Ham        26    8    7   11   29   42   31 
+Ipswich         26    8    6   12   34   40   30 
+Southampton     26    9    3   14   31   41   30 
+Everton         26    7    7   12   26   33   28 
+Bolton          26    6   10   10   30   42   28 
+Blackburn       26    6    7   13   32   36   25 
+Derby           26    6    4   16   18   43   22 
+Leicester       26    3    8   15   18   46   17
