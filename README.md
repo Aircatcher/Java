@@ -7,4 +7,4 @@ For admin menu, can add a user.
 
 And the basic abilities such as signing out and exit the program
 
-<i>For the moment, input username and password as "user"</i><br/>
+<font size="8"><i>For the moment, input username and password as "user"</i></font><br/>
