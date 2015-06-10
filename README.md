@@ -1,4 +1,4 @@
-# My Java Program Collections
+# My Java Repos
 
 <!--to disable html tags and show it in the text, use ```html (triple ``` and html) -->
 <pre>
