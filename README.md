@@ -1,5 +1,5 @@
 # EPL (English Premier League)
-
+```html
 <pre>
 <div class="container">
 <div class="wrap">
@@ -10,7 +10,7 @@ For admin menu, can add a user.
 
 And the basic abilities such as signing out and exit the program.
 
-<h5><i>For the moment, input username and password as "user"</i></h><br/>
+<h5><i>For the moment, input username and password as "user"</i></h>
 </div>
 </div>
 </pre>
