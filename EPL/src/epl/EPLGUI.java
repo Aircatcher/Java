@@ -7,11 +7,14 @@ import java.awt.PopupMenu;
 import java.awt.event.*;
 import java.io.*;
 import java.net.URL;
-
 import javax.swing.*;
 
 public class EPLGUI extends javax.swing.JFrame {
-
+    static String uGUI;
+    static String pGUI;
+    static String uAddGUI;
+    static String pAddGUI;
+    
     public EPLGUI() throws IOException {
         initComponents();
         setResizable(false);  //Frame will be unable to be resized
@@ -20,8 +23,6 @@ public class EPLGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null); //Center the JFrame
 
         //Just some initialization to the frame objects
-        passwordFieldShow.disable();
-        hidePassword.disable();
         statusText.setEditable(false);
         statusTextRecall.setEditable(false);
         groundText.setEditable(false);
@@ -48,10 +49,7 @@ public class EPLGUI extends javax.swing.JFrame {
         notifText = new javax.swing.JLabel();
         loginConfirm = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
-        passwordField = new javax.swing.JPasswordField();
-        passwordFieldShow = new javax.swing.JTextField();
-        showPassword = new javax.swing.JButton();
-        hidePassword = new javax.swing.JButton();
+        passwordField = new javax.swing.JTextField();
         MainMenuAdmin = new javax.swing.JPanel();
         matchEntry = new javax.swing.JButton();
         matchRecall = new javax.swing.JButton();
@@ -136,15 +134,13 @@ public class EPLGUI extends javax.swing.JFrame {
         manager = new javax.swing.JLabel();
         nickname = new javax.swing.JLabel();
         AddUser = new javax.swing.JPanel();
-        underConstruction_AddUser = new javax.swing.JPanel();
-        underConstruction = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         addConfirm = new javax.swing.JButton();
         fieldPanel = new javax.swing.JPanel();
         username1 = new javax.swing.JLabel();
         password1 = new javax.swing.JLabel();
-        usernameField1 = new javax.swing.JTextField();
-        passwordField1 = new javax.swing.JTextField();
+        usernameAdd = new javax.swing.JTextField();
+        passwordAdd = new javax.swing.JTextField();
         MainMenuUser = new javax.swing.JPanel();
         matchRecallUser = new javax.swing.JButton();
         pointTableUser = new javax.swing.JButton();
@@ -186,17 +182,17 @@ public class EPLGUI extends javax.swing.JFrame {
         LoginForm.setPreferredSize(new java.awt.Dimension(464, 404));
         LoginForm.setLayout(null);
         LoginForm.add(usernameField);
-        usernameField.setBounds(66, 11, 171, 19);
+        usernameField.setBounds(66, 11, 171, 20);
 
         username.setText("Username:");
         LoginForm.add(username);
-        username.setBounds(10, 14, 52, 15);
+        username.setBounds(10, 14, 52, 14);
 
         password.setText("Password:");
         password.setMaximumSize(new java.awt.Dimension(54, 15));
         password.setMinimumSize(new java.awt.Dimension(54, 15));
         LoginForm.add(password);
-        password.setBounds(10, 45, 53, 15);
+        password.setBounds(10, 45, 50, 14);
         LoginForm.add(notifText);
         notifText.setBounds(10, 68, 227, 16);
 
@@ -207,7 +203,7 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
         LoginForm.add(loginConfirm);
-        loginConfirm.setBounds(123, 96, 60, 25);
+        loginConfirm.setBounds(123, 96, 57, 23);
 
         exitButton.setText("Exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -216,40 +212,15 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
         LoginForm.add(exitButton);
-        exitButton.setBounds(186, 96, 51, 25);
+        exitButton.setBounds(186, 96, 51, 23);
 
-        passwordField.setName(""); // NOI18N
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
         LoginForm.add(passwordField);
-        passwordField.setBounds(66, 42, 171, 19);
-
-        passwordFieldShow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldShowActionPerformed(evt);
-            }
-        });
-        LoginForm.add(passwordFieldShow);
-        passwordFieldShow.setBounds(66, 42, 171, 19);
-
-        showPassword.setText("Show Password");
-        showPassword.setPreferredSize(new java.awt.Dimension(115, 25));
-        showPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showPasswordActionPerformed(evt);
-            }
-        });
-        LoginForm.add(showPassword);
-        showPassword.setBounds(10, 96, 110, 25);
-
-        hidePassword.setText("Hide Password");
-        hidePassword.setMaximumSize(new java.awt.Dimension(115, 25));
-        hidePassword.setMinimumSize(new java.awt.Dimension(115, 25));
-        hidePassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hidePasswordActionPerformed(evt);
-            }
-        });
-        LoginForm.add(hidePassword);
-        hidePassword.setBounds(10, 96, 108, 25);
+        passwordField.setBounds(66, 42, 171, 20);
 
         getContentPane().add(LoginForm, "card2");
 
@@ -312,22 +283,22 @@ public class EPLGUI extends javax.swing.JFrame {
             MainMenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuAdminLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(matchEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MainMenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(matchRecall, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainMenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainMenuAdminLayout.createSequentialGroup()
-                        .addComponent(signoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(matchEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(exitButtonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainMenuAdminLayout.createSequentialGroup()
+                        .addComponent(matchRecall)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pointTable, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clubDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(clubDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainMenuAdminLayout.createSequentialGroup()
+                        .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(signoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exitButtonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         MainMenuAdminLayout.setVerticalGroup(
             MainMenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,9 +311,9 @@ public class EPLGUI extends javax.swing.JFrame {
                     .addComponent(clubDetails))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainMenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exitButtonMainMenu)
                     .addComponent(addUser)
-                    .addComponent(signoutButton))
+                    .addComponent(signoutButton)
+                    .addComponent(exitButtonMainMenu))
                 .addContainerGap(318, Short.MAX_VALUE))
         );
 
@@ -502,7 +473,7 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addGroup(MatchEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(status)
                     .addComponent(statusText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addGroup(MatchEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_Entry)
                     .addComponent(exitButtonmatchEntry))
@@ -660,7 +631,7 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addGroup(MatchRecallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(recallStatus)
                     .addComponent(statusTextRecall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
                 .addGroup(MatchRecallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_Recall)
                     .addComponent(exitButtonRecall))
@@ -972,7 +943,7 @@ public class EPLGUI extends javax.swing.JFrame {
                                 .addComponent(stdCapacity)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(manager)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
                 .addGroup(ClubDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_Club)
                     .addComponent(exitButtonClub))
@@ -984,28 +955,6 @@ public class EPLGUI extends javax.swing.JFrame {
         AddUser.setPreferredSize(new java.awt.Dimension(464, 404));
         AddUser.setLayout(null);
 
-        underConstruction.setText("Sorry, but this function is still under construction");
-
-        javax.swing.GroupLayout underConstruction_AddUserLayout = new javax.swing.GroupLayout(underConstruction_AddUser);
-        underConstruction_AddUser.setLayout(underConstruction_AddUserLayout);
-        underConstruction_AddUserLayout.setHorizontalGroup(
-            underConstruction_AddUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(underConstruction_AddUserLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(underConstruction)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        underConstruction_AddUserLayout.setVerticalGroup(
-            underConstruction_AddUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(underConstruction_AddUserLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(underConstruction)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-
-        AddUser.add(underConstruction_AddUser);
-        underConstruction_AddUser.setBounds(10, 10, 280, 80);
-
         cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1013,7 +962,7 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
         AddUser.add(cancel);
-        cancel.setBounds(219, 92, 67, 25);
+        cancel.setBounds(219, 92, 65, 23);
 
         addConfirm.setText("Add");
         addConfirm.addActionListener(new java.awt.event.ActionListener() {
@@ -1022,7 +971,7 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
         AddUser.add(addConfirm);
-        addConfirm.setBounds(154, 92, 54, 25);
+        addConfirm.setBounds(154, 92, 51, 23);
 
         username1.setText("Username:");
 
@@ -1038,12 +987,12 @@ public class EPLGUI extends javax.swing.JFrame {
                     .addGroup(fieldPanelLayout.createSequentialGroup()
                         .addComponent(username1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usernameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usernameAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(fieldPanelLayout.createSequentialGroup()
                         .addComponent(password1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordField1)))
+                        .addComponent(passwordAdd)))
                 .addContainerGap())
         );
         fieldPanelLayout.setVerticalGroup(
@@ -1052,16 +1001,16 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(fieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username1)
-                    .addComponent(usernameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernameAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(fieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password1)
-                    .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         AddUser.add(fieldPanel);
-        fieldPanel.setBounds(12, 12, 274, 74);
+        fieldPanel.setBounds(12, 12, 262, 73);
 
         getContentPane().add(AddUser, "card8");
 
@@ -1135,7 +1084,7 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addGroup(MainMenuUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitButtonUser)
                     .addComponent(signoutButtonUser))
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenuUser, "card2");
@@ -1145,11 +1094,6 @@ public class EPLGUI extends javax.swing.JFrame {
         homeTeamPanel_MR_User.setBorder(javax.swing.BorderFactory.createTitledBorder("Home Team"));
 
         homeTeamMenu_User.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
-        homeTeamMenu_User.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeTeamMenu_UserActionPerformed(evt);
-            }
-        });
 
         homeTeam_User.setText("Team Name");
 
@@ -1193,11 +1137,6 @@ public class EPLGUI extends javax.swing.JFrame {
         });
 
         statusTextRecall_User.setText("Enter match details");
-        statusTextRecall_User.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statusTextRecall_UserActionPerformed(evt);
-            }
-        });
 
         awayTeamPanel_MR_User.setBorder(javax.swing.BorderFactory.createTitledBorder("Away Team"));
 
@@ -1294,7 +1233,7 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addGroup(MatchRecallUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(status_User)
                     .addComponent(statusTextRecall_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
                 .addGroup(MatchRecallUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_MR_User)
                     .addComponent(exitButtonRecall_User))
@@ -1333,7 +1272,7 @@ public class EPLGUI extends javax.swing.JFrame {
         PointTableUserLayout.setVerticalGroup(
             PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PointTableUserLayout.createSequentialGroup()
-                .addContainerGap(368, Short.MAX_VALUE)
+                .addContainerGap(495, Short.MAX_VALUE)
                 .addGroup(PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_PointUser)
                     .addComponent(exitButtonPointUser))
@@ -1418,7 +1357,7 @@ public class EPLGUI extends javax.swing.JFrame {
                     .addComponent(groundText1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(clubEmblem1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
                 .addComponent(playClip1)
                 .addGap(54, 54, 54)
                 .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1440,63 +1379,36 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void loginConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginConfirmActionPerformed
-        String user;
-        String pass;
-
         try {
-            BufferedReader br = new BufferedReader(new FileReader("LoginDatabase.txt"));
-            while ((user = br.readLine()) != null)
+            String uF = new LoginRobot().getUserF();
+            String pF = new LoginRobot().getPassF();
+            uGUI = usernameField.getText();
+            pGUI = passwordField.getText();
+            
+            if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) )
             {
-                pass = br.readLine();
-                if ( (usernameField.getText().equalsIgnoreCase(user) && passwordField.getPassword().equals(pass)) )
-                {
-                    passwordFieldShow.getText().equals(pass);
-                    if (usernameField.equals("admin") && passwordField.equals("admin")) {
-                        LoginForm.setVisible(false);
-                        usernameField.setText("");
-                        passwordField.setText("");
-                        passwordFieldShow.setText("");
-                        notifText.setText("");
-                        setTitle("EPL - Admin Menu");
-                        setSize(428, 114);
-                        MainMenuAdmin.setVisible(true);
-                    }
-                    else if (usernameField.equals("user") && passwordField.equals("user")) {
-                        LoginForm.setVisible(false);
-                        usernameField.setText("");
-                        passwordField.setText("");
-                        passwordFieldShow.setText("");
-                        notifText.setText("");
-                        setTitle("EPL - User Menu");
-                        setSize(327, 112);
-                        MainMenuUser.setVisible(true);
-                    } //Login Confirm if it logins from the "Showed password" form
-                    else if (usernameField.equals("admin") && passwordFieldShow.equals("admin")) {
-                        LoginForm.setVisible(false);
-                        usernameField.setText("");
-                        passwordField.setText("");
-                        passwordFieldShow.setText("");
-                        notifText.setText("");
-                        setTitle("EPL - Admin Menu");
-                        setSize(428, 114);
-                        MainMenuAdmin.setVisible(true);
-                    }
-                    else if (usernameField.equals("user") && passwordFieldShow.equals("user")) {
-                        LoginForm.setVisible(false);
-                        usernameField.setText("");
-                        passwordField.setText("");
-                        passwordFieldShow.setText("");
-                        notifText.setText("");
-                        setTitle("EPL - User Menu");
-                        setSize(327, 112);
-                        MainMenuUser.setVisible(true);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Wrong username or password", "Error", JOptionPane.OK_OPTION);
-                    }
-                }
+                LoginForm.setVisible(false);
+                usernameField.setText("");
+                passwordField.setText("");
+                notifText.setText("");
+                setTitle("EPL - Admin Menu");
+                setSize(428, 114);
+                MainMenuAdmin.setVisible(true);
             }
-        } catch (FileNotFoundException ex) { Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex); }
-          catch (IOException ex) { Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex); }
+            else if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) )
+            {
+                LoginForm.setVisible(false);
+                usernameField.setText("");
+                passwordField.setText("");
+                notifText.setText("");
+                setTitle("EPL - User Menu");
+                setSize(327, 112);
+                MainMenuUser.setVisible(true);
+            }
+            else { JOptionPane.showMessageDialog(null, "Wrong username or password", "Error", JOptionPane.OK_OPTION); }
+        } catch (IOException ex) {
+            Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_loginConfirmActionPerformed
 
     private void matchEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchEntryActionPerformed
@@ -1524,124 +1436,109 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_matchRecallActionPerformed
 
     private void pointTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointTableActionPerformed
-        pointTable.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                try {
-                    int readonce = 0;
-                    String ptsOutput;
-                    File readPtsTable = new File("PtsTable.txt");
-                    Scanner fileReader = new Scanner(readPtsTable);
+        try
+        {
+            new LeagueTableDB(); {}
+            String pts = null;
+            
+            File readPtsTable = new File("PtsTable.txt");
+            Scanner fileReader = new Scanner(readPtsTable);
+            
+            int readonce = 0;
+            while (readonce != 1)
+            {
+                if (readPtsTable.exists() && !readPtsTable.isDirectory())
+                {
+                    MainMenuAdmin.setVisible(false);
+                    setTitle("EPL - League Table");
+                    setSize(464, 547);
 
-                    if (readPtsTable.exists() && !readPtsTable.isDirectory()) {
-                        MainMenuAdmin.setVisible(false);
-                        setTitle("EPL - League Table");
-                        setSize(464, 547);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText1.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText2.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText3.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText4.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText5.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText6.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText7.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText8.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText9.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText10.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText11.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText12.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText13.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText14.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText15.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText16.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText17.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText18.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText19.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText20.setText(ptsOutput);
-                        ptsOutput = fileReader.nextLine();
-                        ptsText21.setText(ptsOutput);
-                        PointTable.setVisible(true); // Point Table Frame to show after the Main Menu Frame
-                    }
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
-                    ptsText.setText(null);
-                    ptsText1.setText(null);
-                    ptsText2.setText(null);
-                    ptsText3.setText(null);
-                    ptsText4.setText(null);
-                    ptsText5.setText(null);
-                    ptsText6.setText(null);
-                    ptsText7.setText(null);
-                    ptsText8.setText(null);
-                    ptsText9.setText(null);
-                    ptsText10.setText(null);
-                    ptsText11.setText(null);
-                    ptsText12.setText(null);
-                    ptsText13.setText(null);
-                    ptsText14.setText(null);
-                    ptsText15.setText(null);
-                    ptsText16.setText(null);
-                    ptsText17.setText(null);
-                    ptsText18.setText(null);
-                    ptsText19.setText(null);
-                    ptsText20.setText(null);
-                    ptsText21.setText(null);
-                    JOptionPane.showMessageDialog(null, "The system cannot find the file specified:\n<html><b>LoginDatabase.txt</b></html>", "Error", JOptionPane.OK_OPTION);
+                    pts = fileReader.nextLine();
+                    ptsText.setText(pts);
+                    /*
+                    pts = fileReader.nextLine();
+                    ptsText1.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText2.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText3.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText4.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText5.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText6.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText7.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText8.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText9.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText10.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText11.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText12.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText13.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText14.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText15.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText16.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText17.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText18.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText19.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText20.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText21.setText(ptsOutput);
+                    */
+                    PointTable.setVisible(true); // Point Table Frame to show after the Main Menu Frame
                 }
+                readonce++;
             }
-        });
+        }
+        catch (FileNotFoundException ex)
+        {
+            Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
+            ptsText.setText(null); ptsText1.setText(null);
+            ptsText2.setText(null); ptsText3.setText(null);
+            ptsText4.setText(null); ptsText5.setText(null);
+            ptsText6.setText(null); ptsText7.setText(null);
+            ptsText8.setText(null); ptsText9.setText(null);
+            ptsText10.setText(null); ptsText11.setText(null);
+            ptsText12.setText(null); ptsText13.setText(null);
+            ptsText14.setText(null); ptsText15.setText(null);
+            ptsText16.setText(null); ptsText17.setText(null);
+            ptsText18.setText(null); ptsText19.setText(null);
+            ptsText20.setText(null); ptsText21.setText(null);
+            JOptionPane.showMessageDialog(null, "The system cannot find the file specified:\n<html><b>LoginDatabase.txt</b></html>", "Error", JOptionPane.OK_OPTION);
+        }
     }//GEN-LAST:event_pointTableActionPerformed
 
     private void clubDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubDetailsActionPerformed
-        clubDetails.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuAdmin.setVisible(false);
-                setTitle("EPL - Club Details");
-                setSize(500, 342);
-                ClubDetails.setVisible(true); // Club Detail Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuAdmin.setVisible(false);
+        setTitle("EPL - Club Details");
+        setSize(500, 342);
+        ClubDetails.setVisible(true); // Club Detail Frame to show after the Main Menu Frame
     }//GEN-LAST:event_clubDetailsActionPerformed
 
     private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
-        addUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuAdmin.setVisible(false);
-                setTitle("EPL - Add a User");
-                setSize(300, 152);
-                AddUser.setVisible(true);
-            }
-        });
+        MainMenuAdmin.setVisible(false);
+        setTitle("EPL - Add a User");
+        setSize(300, 152);
+        AddUser.setVisible(true);
     }//GEN-LAST:event_addUserActionPerformed
 
     private void exitButtonMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonMainMenuActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonMainMenuActionPerformed
 
     private void homeTeamMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeTeamMenuActionPerformed
@@ -1650,9 +1547,7 @@ public class EPLGUI extends javax.swing.JFrame {
 
     private void exitButtonmatchEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonmatchEntryActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonmatchEntryActionPerformed
 
     private void matchEntryConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchEntryConfirmActionPerformed
@@ -1672,15 +1567,10 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_matchEntryConfirmActionPerformed
 
     private void backToMenu_EntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_EntryActionPerformed
-        backToMenu_Entry.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MatchEntry.setVisible(false);
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true); // Back to Menu
-            }
-        });
+        MatchEntry.setVisible(false);
+        setTitle("EPL - Admin Menu");
+        setSize(428, 114);
+        MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_backToMenu_EntryActionPerformed
 
     private void homeTeamMenu_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeTeamMenu_AdminActionPerformed
@@ -1693,21 +1583,14 @@ public class EPLGUI extends javax.swing.JFrame {
 
     private void exitButtonPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonPointActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonPointActionPerformed
 
     private void backToMenu_PointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_PointActionPerformed
-        backToMenu_Point.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                PointTable.setVisible(false);
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true); // Back to Menu
-            }
-        });
+        PointTable.setVisible(false);
+        setTitle("EPL - Admin Menu");
+        setSize(428, 114);
+        MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_backToMenu_PointActionPerformed
 
     private void clubNameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubNameMenuActionPerformed
@@ -1865,7 +1748,7 @@ public class EPLGUI extends javax.swing.JFrame {
             clubFounded.setText("1878");
             clubStdCapacity.setText("39,573");
             clubManager.setText("Roberto Martínez");
-        } /* !______________________________________ */ else if (club == 17) {
+        } else if (club == 17) {
             groundText.setText("Macron Stadium, Bolton, Greater Manchester");
             URL iconURL = getClass().getResource("logo\\bolton.png");
             ImageIcon icon = new ImageIcon(iconURL);
@@ -1905,209 +1788,132 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_clubNameMenuActionPerformed
 
     private void backToMenu_ClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_ClubActionPerformed
-        backToMenu_Club.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                ClubDetails.setVisible(false);
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true); // Back to Menu
-            }
-        });
+        ClubDetails.setVisible(false);
+        setTitle("EPL - Admin Menu");
+        setSize(428, 114);
+        MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_backToMenu_ClubActionPerformed
 
     private void exitButtonClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonClubActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonClubActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        cancel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                AddUser.setVisible(false);
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true); // Back to Menu
-            }
-        });
+        AddUser.setVisible(false);
+        setTitle("EPL - Admin Menu");
+        setSize(428, 114);
+        MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_cancelActionPerformed
 
     private void addConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addConfirmActionPerformed
-        /*
-         try
-         {
-         PrintWriter out;
-         out = new PrintWriter(new BufferedWriter ( new FileWriter("C:\\Text.txt", true) ) );
-         }
-         catch (IOException ex)
-         {
-         Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         */
+        try
+        {
+            String uAF = new AddUser().getuAddF();
+            String pAF = new AddUser().getpAddF();
+            uAddGUI = usernameAdd.getText();
+            pAddGUI = passwordAdd.getText();
+            
+            PrintWriter out = new PrintWriter(new BufferedWriter ( new FileWriter("LoginDB.txt", true) ) );
+        }
+        catch (IOException ex)
+        {
+            Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addConfirmActionPerformed
 
     private void exitButtonRecallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonRecallActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonRecallActionPerformed
 
     private void backToMenu_RecallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_RecallActionPerformed
-        backToMenu_Recall.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MatchRecall.setVisible(false);
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true); // Back to Menu
-            }
-        });
+        MatchRecall.setVisible(false);
+        setTitle("EPL - Admin Menu");
+        setSize(428, 114);
+        MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_backToMenu_RecallActionPerformed
 
     private void signoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonActionPerformed
-        signoutButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                notifText.setText("");
-                MainMenuAdmin.setVisible(false);
-                setTitle("EPL - Login");
-                setSize(257, 158);
-                hidePassword.disable();
-                hidePassword.setVisible(false);
-                showPassword.enable();
-                showPassword.setVisible(true);
-                LoginForm.setVisible(true); // Back to Login Form
-            }
-        });
+        notifText.setText("");
+        MainMenuAdmin.setVisible(false);
+        setTitle("EPL - Login");
+        setSize(257, 158);
+        LoginForm.setVisible(true); // Back to Login Form
     }//GEN-LAST:event_signoutButtonActionPerformed
 
     private void matchRecallUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchRecallUserActionPerformed
-        matchRecallUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuUser.setVisible(false);
-                setTitle("EPL - Recall a Match");
-                setSize(464, 267);
-                MatchRecallUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuUser.setVisible(false);
+        setTitle("EPL - Recall a Match");
+        setSize(464, 267);
+        MatchRecallUser.setVisible(true); // Match Recall (User) Frame to show after the Main Menu Frame
     }//GEN-LAST:event_matchRecallUserActionPerformed
 
     private void pointTableUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointTableUserActionPerformed
-        pointTableUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuUser.setVisible(false);
-                setTitle("EPL - League Table");
-                setSize(464, 419);
-                PointTableUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuUser.setVisible(false);
+        setTitle("EPL - League Table");
+        setSize(464, 419);
+        PointTableUser.setVisible(true); // Point Table (User) Frame to show after the Main Menu Frame
     }//GEN-LAST:event_pointTableUserActionPerformed
 
     private void clubDetailsUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubDetailsUserActionPerformed
-        clubDetailsUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuUser.setVisible(false);
-                setTitle("EPL - Club Details");
-                setSize(388, 356);
-                ClubDetailsUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuUser.setVisible(false);
+        setTitle("EPL - Club Details");
+        setSize(388, 356);
+        ClubDetailsUser.setVisible(true); // Club Details (User) Frame to show after the Main Menu Frame
     }//GEN-LAST:event_clubDetailsUserActionPerformed
 
     private void exitButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonUserActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonUserActionPerformed
 
     private void signoutButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonUserActionPerformed
-        signoutButtonUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                notifText.setText("");
-                MainMenuUser.setVisible(false);
-                setTitle("EPL - Login");
-                setSize(257, 158);
-                LoginForm.setVisible(true); // Back to Login Form
-            }
-        });
+        notifText.setText("");
+        MainMenuUser.setVisible(false);
+        setTitle("EPL - Login");
+        setSize(257, 158);
+        LoginForm.setVisible(true); // Back to Login Form
     }//GEN-LAST:event_signoutButtonUserActionPerformed
-
-    private void homeTeamMenu_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeTeamMenu_UserActionPerformed
-
-    }//GEN-LAST:event_homeTeamMenu_UserActionPerformed
 
     private void recallMatchConfirm_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recallMatchConfirm_UserActionPerformed
 
     }//GEN-LAST:event_recallMatchConfirm_UserActionPerformed
 
-    private void statusTextRecall_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusTextRecall_UserActionPerformed
-
-    }//GEN-LAST:event_statusTextRecall_UserActionPerformed
-
     private void exitButtonRecall_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonRecall_UserActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonRecall_UserActionPerformed
 
     private void backToMenu_MR_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_MR_UserActionPerformed
-        backToMenu_MR_User.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MatchRecallUser.setVisible(false);
-                setTitle("EPL - User Menu");
-                setSize(327, 112);
-                MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        MatchRecallUser.setVisible(false);
+        setTitle("EPL - User Menu");
+        setSize(327, 112);
+        MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
     }//GEN-LAST:event_backToMenu_MR_UserActionPerformed
 
     private void exitButtonPointUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonPointUserActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonPointUserActionPerformed
 
     private void backToMenu_PointUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_PointUserActionPerformed
-        backToMenu_PointUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                PointTableUser.setVisible(false);
-                setTitle("EPL - User Menu");
-                setSize(327, 112);
-                MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        PointTableUser.setVisible(false);
+        setTitle("EPL - User Menu");
+        setSize(327, 112);
+        MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
     }//GEN-LAST:event_backToMenu_PointUserActionPerformed
 
     private void backToMenu_ClubUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_ClubUserActionPerformed
-        backToMenu_ClubUser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                ClubDetailsUser.setVisible(false);
-                setTitle("EPL - User Menu");
-                setSize(327, 112);
-                MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        ClubDetailsUser.setVisible(false);
+        setTitle("EPL - User Menu");
+        setSize(327, 112);
+        MainMenuUser.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
     }//GEN-LAST:event_backToMenu_ClubUserActionPerformed
 
     private void exitButtonClubUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonClubUserActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonClubUserActionPerformed
 
     private void playClip1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playClip1ActionPerformed
@@ -2117,48 +1923,9 @@ public class EPLGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_playClip1ActionPerformed
 
-    private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
-        showPassword.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                String password = new String(passwordField.getPassword());
-                passwordField.setVisible(false);
-                passwordField.disable();
-                showPassword.setVisible(false);
-                showPassword.disable();
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
 
-                passwordFieldShow.setText(password);
-                passwordFieldShow.setVisible(true);
-                passwordFieldShow.enable();
-                passwordFieldShow.setEditable(true);
-                hidePassword.enable();
-                hidePassword.setVisible(true);
-            }
-        });
-    }//GEN-LAST:event_showPasswordActionPerformed
-
-    private void passwordFieldShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldShowActionPerformed
-
-    }//GEN-LAST:event_passwordFieldShowActionPerformed
-
-    private void hidePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hidePasswordActionPerformed
-        hidePassword.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                String password = new String(passwordFieldShow.getText());
-                passwordField.setVisible(true);
-                passwordField.enable();
-                showPassword.setVisible(true);
-                showPassword.enable();
-
-                passwordField.setText(password);
-                passwordFieldShow.disable();
-                passwordFieldShow.setEditable(false);
-                hidePassword.disable();
-                hidePassword.setVisible(false);
-            }
-        });
-    }//GEN-LAST:event_hidePasswordActionPerformed
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void clubNameMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubNameMenu1ActionPerformed
         int club = clubNameMenu.getSelectedIndex();
@@ -2302,7 +2069,6 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JLabel ground1;
     private javax.swing.JTextField groundText;
     private javax.swing.JTextField groundText1;
-    private javax.swing.JButton hidePassword;
     private javax.swing.JLabel homeTeam;
     private javax.swing.JLabel homeTeam1;
     private javax.swing.JComboBox homeTeamMenu;
@@ -2328,9 +2094,8 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JLabel notifText;
     private javax.swing.JLabel password;
     private javax.swing.JLabel password1;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField passwordField1;
-    private javax.swing.JTextField passwordFieldShow;
+    private javax.swing.JTextField passwordAdd;
+    private javax.swing.JTextField passwordField;
     private javax.swing.JButton playClip1;
     private javax.swing.JButton pointTable;
     private javax.swing.JButton pointTableUser;
@@ -2359,7 +2124,6 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JButton recallMatchConfirm;
     private javax.swing.JButton recallMatchConfirm_User;
     private javax.swing.JLabel recallStatus;
-    private javax.swing.JButton showPassword;
     private javax.swing.JButton signoutButton;
     private javax.swing.JButton signoutButtonUser;
     private javax.swing.JLabel status;
@@ -2368,12 +2132,10 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JTextField statusTextRecall_User;
     private javax.swing.JLabel status_User;
     private javax.swing.JLabel stdCapacity;
-    private javax.swing.JLabel underConstruction;
-    private javax.swing.JPanel underConstruction_AddUser;
     private javax.swing.JLabel username;
     private javax.swing.JLabel username1;
+    private javax.swing.JTextField usernameAdd;
     private javax.swing.JTextField usernameField;
-    private javax.swing.JTextField usernameField1;
     // End of variables declaration//GEN-END:variables
 
     private static class emblemIMG extends PopupMenu {
