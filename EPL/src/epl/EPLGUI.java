@@ -14,15 +14,20 @@ public class EPLGUI extends javax.swing.JFrame {
     static String pGUI;
     static String uAddGUI;
     static String pAddGUI;
+    static int htRecallGUI;
+    static int atRecallGUI;
+    static int htScoreRecallGUI;
+    static int atScoreRecallGUI;
     
-    public EPLGUI() throws IOException {
+    public EPLGUI() throws IOException
+    {
         initComponents();
         setResizable(false);  //Frame will be unable to be resized
         setTitle("EPL - Login");
         setSize(257, 158);
         setLocationRelativeTo(null); //Center the JFrame
 
-        //Just some initialization to the frame objects
+        //Just some initialization with the frame objects
         statusText.setEditable(false);
         statusTextRecall.setEditable(false);
         groundText.setEditable(false);
@@ -34,7 +39,6 @@ public class EPLGUI extends javax.swing.JFrame {
         clubManager.setText(null);
 
         addConfirm.setVisible(false); // << Under Constr 
-        //It will closed and the whole process will be ended
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -76,17 +80,17 @@ public class EPLGUI extends javax.swing.JFrame {
         awayTeamScoreMenu = new javax.swing.JComboBox();
         MatchRecall = new javax.swing.JPanel();
         homeTeamPanel1 = new javax.swing.JPanel();
-        homeTeamMenu_Admin = new javax.swing.JComboBox();
+        homeTeam_Recall = new javax.swing.JComboBox();
         homeTeam1 = new javax.swing.JLabel();
         homeTeamScore1 = new javax.swing.JLabel();
-        homeTeamScoreStatus = new javax.swing.JTextField();
+        homeTeamScore_Recall = new javax.swing.JComboBox();
         recallMatchConfirm = new javax.swing.JButton();
         statusTextRecall = new javax.swing.JTextField();
         awayTeamPanel1 = new javax.swing.JPanel();
         awayTeam1 = new javax.swing.JLabel();
-        awayTeamMenu_Admin = new javax.swing.JComboBox();
+        awayTeam_Recall = new javax.swing.JComboBox();
         awayTeamScore1 = new javax.swing.JLabel();
-        awayTeamScoreStatus = new javax.swing.JTextField();
+        awayTeamScore_Recall = new javax.swing.JComboBox();
         recallStatus = new javax.swing.JLabel();
         exitButtonRecall = new javax.swing.JButton();
         backToMenu_Recall = new javax.swing.JButton();
@@ -166,15 +170,46 @@ public class EPLGUI extends javax.swing.JFrame {
         PointTableUser = new javax.swing.JPanel();
         exitButtonPointUser = new javax.swing.JButton();
         backToMenu_PointUser = new javax.swing.JButton();
+        ptsText2_User = new javax.swing.JLabel();
+        ptsText3_User = new javax.swing.JLabel();
+        ptsText4_User = new javax.swing.JLabel();
+        ptsText5_User = new javax.swing.JLabel();
+        ptsText6_User = new javax.swing.JLabel();
+        ptsText7_User = new javax.swing.JLabel();
+        ptsText8_User = new javax.swing.JLabel();
+        ptsText9_User = new javax.swing.JLabel();
+        ptsText10_User = new javax.swing.JLabel();
+        ptsText_User = new javax.swing.JLabel();
+        ptsText11_User = new javax.swing.JLabel();
+        ptsText1_User = new javax.swing.JLabel();
+        ptsText12_User = new javax.swing.JLabel();
+        ptsText13_User = new javax.swing.JLabel();
+        ptsText14_User = new javax.swing.JLabel();
+        ptsText15_User = new javax.swing.JLabel();
+        ptsText16_User = new javax.swing.JLabel();
+        ptsText17_User = new javax.swing.JLabel();
+        ptsText18_User = new javax.swing.JLabel();
+        ptsText19_User = new javax.swing.JLabel();
+        ptsText20_User = new javax.swing.JLabel();
+        ptsText21_User = new javax.swing.JLabel();
         ClubDetailsUser = new javax.swing.JPanel();
-        clubNameMenu1 = new javax.swing.JComboBox();
         backToMenu_ClubUser = new javax.swing.JButton();
         exitButtonClubUser = new javax.swing.JButton();
-        playClip1 = new javax.swing.JButton();
-        groundText1 = new javax.swing.JTextField();
-        clubName1 = new javax.swing.JLabel();
-        ground1 = new javax.swing.JLabel();
-        clubEmblem1 = new javax.swing.JLabel();
+        clubNickname_User = new javax.swing.JLabel();
+        clubFounded_User = new javax.swing.JLabel();
+        clubNameMenu_User = new javax.swing.JComboBox();
+        clubStdCapacity_User = new javax.swing.JLabel();
+        clubManager_User = new javax.swing.JLabel();
+        founded1 = new javax.swing.JLabel();
+        groundText_User = new javax.swing.JTextField();
+        stdCapacity1 = new javax.swing.JLabel();
+        clubName2 = new javax.swing.JLabel();
+        manager1 = new javax.swing.JLabel();
+        ground2 = new javax.swing.JLabel();
+        nickname1 = new javax.swing.JLabel();
+        clubEmblem2 = new javax.swing.JLabel();
+        details1 = new javax.swing.JLabel();
+        emblemIMG_User = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -486,16 +521,18 @@ public class EPLGUI extends javax.swing.JFrame {
 
         homeTeamPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Home Team"));
 
-        homeTeamMenu_Admin.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
-        homeTeamMenu_Admin.addActionListener(new java.awt.event.ActionListener() {
+        homeTeam_Recall.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
+        homeTeam_Recall.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeTeamMenu_AdminActionPerformed(evt);
+                homeTeam_RecallActionPerformed(evt);
             }
         });
 
         homeTeam1.setText("Team Name");
 
         homeTeamScore1.setText("Home Team Score");
+
+        homeTeamScore_Recall.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
 
         javax.swing.GroupLayout homeTeamPanel1Layout = new javax.swing.GroupLayout(homeTeamPanel1);
         homeTeamPanel1.setLayout(homeTeamPanel1Layout);
@@ -504,13 +541,13 @@ public class EPLGUI extends javax.swing.JFrame {
             .addGroup(homeTeamPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(homeTeamPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeTeamMenu_Admin, 0, 178, Short.MAX_VALUE)
-                    .addComponent(homeTeamScoreStatus)
+                    .addComponent(homeTeam_Recall, 0, 178, Short.MAX_VALUE)
                     .addGroup(homeTeamPanel1Layout.createSequentialGroup()
                         .addGroup(homeTeamPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(homeTeam1)
                             .addComponent(homeTeamScore1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(homeTeamScore_Recall, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         homeTeamPanel1Layout.setVerticalGroup(
@@ -519,12 +556,12 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(homeTeam1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(homeTeamMenu_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(homeTeam_Recall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(homeTeamScore1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(homeTeamScoreStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(homeTeamScore_Recall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
 
         recallMatchConfirm.setText("Recall Match");
@@ -540,9 +577,11 @@ public class EPLGUI extends javax.swing.JFrame {
 
         awayTeam1.setText("Away Team");
 
-        awayTeamMenu_Admin.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
+        awayTeam_Recall.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
 
         awayTeamScore1.setText("Away Team Score");
+
+        awayTeamScore_Recall.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
 
         javax.swing.GroupLayout awayTeamPanel1Layout = new javax.swing.GroupLayout(awayTeamPanel1);
         awayTeamPanel1.setLayout(awayTeamPanel1Layout);
@@ -551,13 +590,13 @@ public class EPLGUI extends javax.swing.JFrame {
             .addGroup(awayTeamPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(awayTeamPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(awayTeamScoreStatus)
                     .addGroup(awayTeamPanel1Layout.createSequentialGroup()
                         .addGroup(awayTeamPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(awayTeamScore1)
                             .addComponent(awayTeam1))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(awayTeamMenu_Admin, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(awayTeam_Recall, 0, 196, Short.MAX_VALUE)
+                    .addComponent(awayTeamScore_Recall, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         awayTeamPanel1Layout.setVerticalGroup(
@@ -566,12 +605,12 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(awayTeam1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(awayTeamMenu_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(awayTeam_Recall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(awayTeamScore1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(awayTeamScoreStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(awayTeamScore_Recall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
 
         recallStatus.setText("Status:");
@@ -943,7 +982,7 @@ public class EPLGUI extends javax.swing.JFrame {
                                 .addComponent(stdCapacity)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(manager)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addGroup(ClubDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_Club)
                     .addComponent(exitButtonClub))
@@ -1084,7 +1123,7 @@ public class EPLGUI extends javax.swing.JFrame {
                 .addGroup(MainMenuUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitButtonUser)
                     .addComponent(signoutButtonUser))
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainMenuUser, "card2");
@@ -1258,21 +1297,159 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
 
+        ptsText2_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText2_User.setText("Line 3");
+
+        ptsText3_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText3_User.setText("Line 4");
+
+        ptsText4_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText4_User.setText("Line 5");
+
+        ptsText5_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText5_User.setText("Line 6");
+
+        ptsText6_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText6_User.setText("Line 7");
+
+        ptsText7_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText7_User.setText("Line 8");
+
+        ptsText8_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText8_User.setText("Line 9");
+
+        ptsText9_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText9_User.setText("Line 10");
+
+        ptsText10_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText10_User.setText("Line 11");
+
+        ptsText_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText_User.setText("Line 1");
+
+        ptsText11_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText11_User.setText("Line 12");
+
+        ptsText1_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText1_User.setText("Line 2");
+
+        ptsText12_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText12_User.setText("Line 13");
+
+        ptsText13_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText13_User.setText("Line 14");
+
+        ptsText14_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText14_User.setText("Line 15");
+
+        ptsText15_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText15_User.setText("Line 16");
+
+        ptsText16_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText16_User.setText("Line 17");
+
+        ptsText17_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText17_User.setText("Line 18");
+
+        ptsText18_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText18_User.setText("Line 19");
+
+        ptsText19_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText19_User.setText("Line 20");
+
+        ptsText20_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText20_User.setText("Line 21");
+
+        ptsText21_User.setFont(new java.awt.Font("Consolas", 0, 13)); // NOI18N
+        ptsText21_User.setText("Line 22");
+
         javax.swing.GroupLayout PointTableUserLayout = new javax.swing.GroupLayout(PointTableUser);
         PointTableUser.setLayout(PointTableUserLayout);
         PointTableUserLayout.setHorizontalGroup(
             PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PointTableUserLayout.createSequentialGroup()
-                .addContainerGap(298, Short.MAX_VALUE)
+                .addContainerGap(300, Short.MAX_VALUE)
                 .addComponent(backToMenu_PointUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitButtonPointUser)
                 .addContainerGap())
+            .addGroup(PointTableUserLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ptsText1_User)
+                    .addComponent(ptsText2_User)
+                    .addComponent(ptsText3_User)
+                    .addComponent(ptsText4_User)
+                    .addComponent(ptsText5_User)
+                    .addComponent(ptsText6_User)
+                    .addComponent(ptsText7_User)
+                    .addComponent(ptsText8_User)
+                    .addComponent(ptsText9_User)
+                    .addComponent(ptsText10_User)
+                    .addComponent(ptsText11_User)
+                    .addComponent(ptsText12_User)
+                    .addComponent(ptsText14_User)
+                    .addComponent(ptsText13_User)
+                    .addComponent(ptsText15_User)
+                    .addComponent(ptsText16_User)
+                    .addComponent(ptsText17_User)
+                    .addComponent(ptsText18_User)
+                    .addComponent(ptsText21_User)
+                    .addComponent(ptsText20_User)
+                    .addComponent(ptsText19_User)
+                    .addGroup(PointTableUserLayout.createSequentialGroup()
+                        .addComponent(ptsText_User)
+                        .addGap(7, 7, 7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PointTableUserLayout.setVerticalGroup(
             PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PointTableUserLayout.createSequentialGroup()
-                .addContainerGap(495, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(ptsText_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText1_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText2_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText3_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText4_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText5_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText6_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText7_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText8_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText9_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText10_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText11_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText12_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText13_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText14_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText15_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText16_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText17_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText18_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText19_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText20_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ptsText21_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PointTableUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_PointUser)
                     .addComponent(exitButtonPointUser))
@@ -1282,13 +1459,6 @@ public class EPLGUI extends javax.swing.JFrame {
         getContentPane().add(PointTableUser, "card6");
 
         ClubDetailsUser.setPreferredSize(new java.awt.Dimension(464, 404));
-
-        clubNameMenu1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
-        clubNameMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clubNameMenu1ActionPerformed(evt);
-            }
-        });
 
         backToMenu_ClubUser.setText("Back to Menu");
         backToMenu_ClubUser.addActionListener(new java.awt.event.ActionListener() {
@@ -1304,62 +1474,118 @@ public class EPLGUI extends javax.swing.JFrame {
             }
         });
 
-        playClip1.setText("Play Clip");
-        playClip1.addActionListener(new java.awt.event.ActionListener() {
+        clubNickname_User.setText("[Nickname]");
+
+        clubFounded_User.setText("[Founded]");
+
+        clubNameMenu_User.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Club ...", "Manchester United", "Newcastle", "Arsenal", "Liverpool", "Chelsea", "Leeds", "Aston Villa", "Tottenham", "Fulham", "Charlton", "West Ham", "Sunderland", "Ipswich", "Middlesbrough", "Southampton", "Everton", "Bolton", "Blackburn", "Derby", "Leicester" }));
+        clubNameMenu_User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playClip1ActionPerformed(evt);
+                clubNameMenu_UserActionPerformed(evt);
             }
         });
 
-        clubName1.setText("Club Name");
+        clubStdCapacity_User.setText("[StdCpcity]");
 
-        ground1.setText("Ground");
+        clubManager_User.setText("[Manager]");
 
-        clubEmblem1.setText("Emblem");
+        founded1.setText("Founded:");
+
+        stdCapacity1.setText("Stadium Capacity:");
+
+        clubName2.setText("Club Name");
+
+        manager1.setText("Manager:");
+
+        ground2.setText("Ground");
+
+        nickname1.setText("Nickname:");
+
+        clubEmblem2.setText("Emblem");
+
+        details1.setText("Details:");
+
+        emblemIMG_User.setIcon(new javax.swing.ImageIcon(getClass().getResource("/epl/logo/")));
 
         javax.swing.GroupLayout ClubDetailsUserLayout = new javax.swing.GroupLayout(ClubDetailsUser);
         ClubDetailsUser.setLayout(ClubDetailsUserLayout);
         ClubDetailsUserLayout.setHorizontalGroup(
             ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ClubDetailsUserLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(clubEmblem1)
-                    .addComponent(clubName1)
-                    .addComponent(clubNameMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClubDetailsUserLayout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
                 .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClubDetailsUserLayout.createSequentialGroup()
+                        .addContainerGap(300, Short.MAX_VALUE)
                         .addComponent(backToMenu_ClubUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(exitButtonClubUser)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClubDetailsUserLayout.createSequentialGroup()
-                        .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(groundText1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ground1))
-                            .addComponent(playClip1))
-                        .addGap(49, 49, 49))))
+                        .addComponent(exitButtonClubUser))
+                    .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clubEmblem2)
+                            .addComponent(clubName2)
+                            .addComponent(clubNameMenu_User, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emblemIMG_User))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ground2)
+                            .addComponent(details1)
+                            .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                                .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(manager1)
+                                    .addComponent(stdCapacity1)
+                                    .addComponent(founded1)
+                                    .addComponent(nickname1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(clubManager_User)
+                                    .addComponent(clubStdCapacity_User)
+                                    .addComponent(clubFounded_User)
+                                    .addComponent(clubNickname_User)))
+                            .addComponent(groundText_User, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         ClubDetailsUserLayout.setVerticalGroup(
             ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ClubDetailsUserLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clubName1)
-                    .addComponent(ground1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(clubNameMenu1)
-                    .addComponent(groundText1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(clubEmblem1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
-                .addComponent(playClip1)
-                .addGap(54, 54, 54)
+                    .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                        .addComponent(clubName2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clubNameMenu_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                        .addComponent(ground2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(groundText_User)))
+                .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(details1)
+                        .addGap(8, 8, 8)
+                        .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                                .addComponent(clubNickname_User)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubFounded_User)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubStdCapacity_User)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clubManager_User))
+                            .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                                .addComponent(nickname1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(founded1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(stdCapacity1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(manager1))))
+                    .addGroup(ClubDetailsUserLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(clubEmblem2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emblemIMG_User)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(ClubDetailsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backToMenu_ClubUser)
                     .addComponent(exitButtonClubUser))
@@ -1373,38 +1599,45 @@ public class EPLGUI extends javax.swing.JFrame {
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         int exitPopUp = JOptionPane.showConfirmDialog(null, "Are you sure?", "Quit", JOptionPane.YES_NO_OPTION);
-        if (exitPopUp == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void loginConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginConfirmActionPerformed
         try {
-            String uF = new LoginRobot().getUserF();
-            String pF = new LoginRobot().getPassF();
-            uGUI = usernameField.getText();
+            uGUI = usernameField.getText(); //Get username and password from the EPLGUI
             pGUI = passwordField.getText();
             
-            if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) )
+            if ( uGUI.equalsIgnoreCase("admin") && pGUI.equals("admin") ) //Admin menu will show if user & pass entered "admin"
             {
-                LoginForm.setVisible(false);
-                usernameField.setText("");
-                passwordField.setText("");
-                notifText.setText("");
-                setTitle("EPL - Admin Menu");
-                setSize(428, 114);
-                MainMenuAdmin.setVisible(true);
+                String uF = new LoginRobot().getUserF(); //get userF & passF from class LoginRobot
+                String pF = new LoginRobot().getPassF();
+                if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) ) //Compare user & pass in EPLGUI & LoginRobot
+                {
+                    LoginForm.setVisible(false);
+                    usernameField.setText("");
+                    passwordField.setText("");
+                    notifText.setText("");
+                    setTitle("EPL - Admin Menu");
+                    setSize(428, 114);
+                    MainMenuAdmin.setVisible(true);
+                }
             }
-            else if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) )
+            else if ( uGUI.equalsIgnoreCase("user") && pGUI.equals("user") ) //User menu will show if user & pass entered "user"
             {
-                LoginForm.setVisible(false);
-                usernameField.setText("");
-                passwordField.setText("");
-                notifText.setText("");
-                setTitle("EPL - User Menu");
-                setSize(327, 112);
-                MainMenuUser.setVisible(true);
+                String uF = new LoginRobot().getUserF(); //get userF & passF from class LoginRobot
+                String pF = new LoginRobot().getPassF();
+                if ( uGUI.equalsIgnoreCase(uF) && pGUI.equals(pF) ) //Compare user & pass in EPLGUI & LoginRobot
+                {
+                    LoginForm.setVisible(false);
+                    usernameField.setText("");
+                    passwordField.setText("");
+                    notifText.setText("");
+                    setTitle("EPL - User Menu");
+                    setSize(327, 112);
+                    MainMenuUser.setVisible(true);
+                }
             }
+            //Showing login error if the login properties doesn't match with the Login Database
             else { JOptionPane.showMessageDialog(null, "Wrong username or password", "Error", JOptionPane.OK_OPTION); }
         } catch (IOException ex) {
             Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -1412,35 +1645,23 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_loginConfirmActionPerformed
 
     private void matchEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchEntryActionPerformed
-        matchEntry.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuAdmin.setVisible(false);
-                setTitle("EPL - Enter a Match");
-                setSize(464, 267);
-                MatchEntry.setVisible(true); // Match Entry Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuAdmin.setVisible(false);
+        setTitle("EPL - Enter a Match");
+        setSize(464, 267);
+        MatchEntry.setVisible(true); // Match Entry Frame to show after the Main Menu Frame
     }//GEN-LAST:event_matchEntryActionPerformed
 
     private void matchRecallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchRecallActionPerformed
-        matchRecall.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                MainMenuAdmin.setVisible(false);
-                setTitle("EPL - Recall a Match");
-                setSize(464, 267);
-                MatchRecall.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
-            }
-        });
+        MainMenuAdmin.setVisible(false);
+        setTitle("EPL - Recall a Match");
+        setSize(464, 267);
+        MatchRecall.setVisible(true); // Match Recall Frame to show after the Main Menu Frame
     }//GEN-LAST:event_matchRecallActionPerformed
 
     private void pointTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointTableActionPerformed
         try
         {
-            new LeagueTableDB(); {}
-            String pts = null;
-            
+            String ptsOutput = null;
             File readPtsTable = new File("PtsTable.txt");
             Scanner fileReader = new Scanner(readPtsTable);
             
@@ -1453,10 +1674,9 @@ public class EPLGUI extends javax.swing.JFrame {
                     setTitle("EPL - League Table");
                     setSize(464, 547);
 
-                    pts = fileReader.nextLine();
-                    ptsText.setText(pts);
-                    /*
-                    pts = fileReader.nextLine();
+                    ptsOutput = fileReader.nextLine();
+                    ptsText.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
                     ptsText1.setText(ptsOutput);
                     ptsOutput = fileReader.nextLine();
                     ptsText2.setText(ptsOutput);
@@ -1498,7 +1718,6 @@ public class EPLGUI extends javax.swing.JFrame {
                     ptsText20.setText(ptsOutput);
                     ptsOutput = fileReader.nextLine();
                     ptsText21.setText(ptsOutput);
-                    */
                     PointTable.setVisible(true); // Point Table Frame to show after the Main Menu Frame
                 }
                 readonce++;
@@ -1551,19 +1770,19 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButtonmatchEntryActionPerformed
 
     private void matchEntryConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchEntryConfirmActionPerformed
-        homeTeamMenu.getSelectedItem();
-        homeTeamScoreMenu.getSelectedItem();
-        awayTeamMenu.getSelectedItem();
-        awayTeamScoreMenu.getSelectedItem();
-
-        /*
-         matchEntryConfirm.
-         Readable input = null;
-         Scanner me = new Scanner(input);
-         me = matchEntry.next();
-         PrintWriter matchEntryConfirm = new PrintWriter("MatchEntry.txt");
-         matchEntryConfirm.println();
-         */
+        /*try
+        {
+            
+            matchEntryConfirm.
+            Readable input = null;
+            Scanner me = new Scanner(input);
+            me = matchEntry.next();
+            
+            matchEntryConfirm.println();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }//GEN-LAST:event_matchEntryConfirmActionPerformed
 
     private void backToMenu_EntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenu_EntryActionPerformed
@@ -1573,12 +1792,26 @@ public class EPLGUI extends javax.swing.JFrame {
         MainMenuAdmin.setVisible(true); // Back to Menu
     }//GEN-LAST:event_backToMenu_EntryActionPerformed
 
-    private void homeTeamMenu_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeTeamMenu_AdminActionPerformed
+    private void homeTeam_RecallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeTeam_RecallActionPerformed
 
-    }//GEN-LAST:event_homeTeamMenu_AdminActionPerformed
+    }//GEN-LAST:event_homeTeam_RecallActionPerformed
 
     private void recallMatchConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recallMatchConfirmActionPerformed
-
+        try
+        {
+            htRecallGUI = homeTeam_Recall.getSelectedIndex(); //Get all the selected index of the Match Entry GUI items
+            atRecallGUI = awayTeam_Recall.getSelectedIndex();
+            htScoreRecallGUI = homeTeamScore_Recall.getSelectedIndex();
+            atScoreRecallGUI = awayTeamScore_Recall.getSelectedIndex();
+            
+            new MatchRecall();
+            PrintWriter entryConfirm = new PrintWriter("MatchEntry.txt");
+            entryConfirm = null;
+        }
+        catch (IOException ex)
+        {
+            Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_recallMatchConfirmActionPerformed
 
     private void exitButtonPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonPointActionPerformed
@@ -1850,16 +2083,92 @@ public class EPLGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_matchRecallUserActionPerformed
 
     private void pointTableUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointTableUserActionPerformed
-        MainMenuUser.setVisible(false);
-        setTitle("EPL - League Table");
-        setSize(464, 419);
-        PointTableUser.setVisible(true); // Point Table (User) Frame to show after the Main Menu Frame
+        try
+        {
+            String ptsOutput = null;
+            File readPtsTable = new File("PtsTable.txt");
+            Scanner fileReader = new Scanner(readPtsTable);
+            
+            int readonce = 0;
+            while (readonce != 1)
+            {
+                if (readPtsTable.exists() && !readPtsTable.isDirectory())
+                {
+                    MainMenuUser.setVisible(false);
+                    setTitle("EPL - League Table");
+                    setSize(464, 547);
+
+                    ptsOutput = fileReader.nextLine();
+                    ptsText_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText1_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText2_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText3_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText4_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText5_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText6_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText7_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText8_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText9_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText10_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText11_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText12_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText13_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText14_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText15_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText16_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText17_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText18_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText19_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText20_User.setText(ptsOutput);
+                    ptsOutput = fileReader.nextLine();
+                    ptsText21_User.setText(ptsOutput);
+                    PointTableUser.setVisible(true); // Point Table (User) Frame to show after the Main Menu Frame
+                }
+                readonce++;
+            }
+        }
+        catch (FileNotFoundException ex)
+        {
+            Logger.getLogger(EPLGUI.class.getName()).log(Level.SEVERE, null, ex);
+            ptsText.setText(null); ptsText1.setText(null);
+            ptsText2.setText(null); ptsText3.setText(null);
+            ptsText4.setText(null); ptsText5.setText(null);
+            ptsText6.setText(null); ptsText7.setText(null);
+            ptsText8.setText(null); ptsText9.setText(null);
+            ptsText10.setText(null); ptsText11.setText(null);
+            ptsText12.setText(null); ptsText13.setText(null);
+            ptsText14.setText(null); ptsText15.setText(null);
+            ptsText16.setText(null); ptsText17.setText(null);
+            ptsText18.setText(null); ptsText19.setText(null);
+            ptsText20.setText(null); ptsText21.setText(null);
+            JOptionPane.showMessageDialog(null, "The system cannot find the file specified:\n<html><b>LoginDatabase.txt</b></html>", "Error", JOptionPane.OK_OPTION);
+        }
     }//GEN-LAST:event_pointTableUserActionPerformed
 
     private void clubDetailsUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubDetailsUserActionPerformed
         MainMenuUser.setVisible(false);
         setTitle("EPL - Club Details");
-        setSize(388, 356);
+        setSize(500, 342);
         ClubDetailsUser.setVisible(true); // Club Details (User) Frame to show after the Main Menu Frame
     }//GEN-LAST:event_clubDetailsUserActionPerformed
 
@@ -1916,56 +2225,203 @@ public class EPLGUI extends javax.swing.JFrame {
         if (exitPopUp == JOptionPane.YES_OPTION) { System.exit(0); }
     }//GEN-LAST:event_exitButtonClubUserActionPerformed
 
-    private void playClip1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playClip1ActionPerformed
-        int clubEmblem = clubNameMenu.getSelectedIndex();
-        if (clubEmblem == 1) {
-            clubDetails.add(new emblemIMG(new ImageIcon("F:\\Libraries\\Cloud\\Dropbox\\Assignment & Docs\\Assignment\\Semester 2\\OOP (Java)\\[FINAL PROJECT]\\EPL\\img\\mu.png")));
-        }
-    }//GEN-LAST:event_playClip1ActionPerformed
-
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
 
     }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void clubNameMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubNameMenu1ActionPerformed
-        int club = clubNameMenu.getSelectedIndex();
+    private void clubNameMenu_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubNameMenu_UserActionPerformed
+        int club = clubNameMenu_User.getSelectedIndex();
 
         if (club == 0) {
-            groundText.setText("");
-            emblemIMG.setIcon(null);
-            clubNickname.setText(null);
+            groundText_User.setText("");
+            emblemIMG_User.setIcon(null);
+            clubNickname_User.setText(null);
+            clubFounded_User.setText(null);
+            clubStdCapacity_User.setText(null);
+            clubManager_User.setText(null);
         } else if (club == 1) {
-            groundText.setText("Old Trafford");  //For the ground text
-            URL iconURL = getClass().getResource("mu.png");  //For the emblem's image
+            groundText_User.setText("Old Trafford");  //For the ground text
+            URL iconURL = getClass().getResource("logo\\mu.png");  //For the emblem's image
             ImageIcon icon = new ImageIcon(iconURL);
-            emblemIMG.setIcon(icon);
-            clubNickname.setText("mu");  //For the club detail text
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Red Devils"); //For the club detail text
+            clubFounded_User.setText("First at 1878");
+            clubStdCapacity_User.setText("75,635");
+            clubManager_User.setText("Louis van Gaal");
         } else if (club == 2) {
-            groundText.setText("Newcastle's");
-            URL iconURL = getClass().getResource("liverpool.png");
+            groundText_User.setText("St James' Park");
+            URL iconURL = getClass().getResource("logo\\newcastle.png");
             ImageIcon icon = new ImageIcon(iconURL);
-            emblemIMG.setIcon(icon);
-            clubNickname.setText("nc");
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Magpies, The Toon, Geordies");
+            clubFounded_User.setText("9 December 1892");
+            clubStdCapacity_User.setText("52,405");
+            clubManager_User.setText("John Carver");
         } else if (club == 3) {
-            groundText.setText("Arsenal's");
-            URL iconURL = getClass().getResource("liverpool.png");
+            groundText_User.setText("Emirates Stadium");
+            URL iconURL = getClass().getResource("logo\\arsenal.png");
             ImageIcon icon = new ImageIcon(iconURL);
-            emblemIMG.setIcon(icon);
-            clubNickname.setText("ars");
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Gunners");
+            clubFounded_User.setText("1886");
+            clubStdCapacity_User.setText("60,338");
+            clubManager_User.setText("Arsène Wenger");
         } else if (club == 4) {
-            groundText.setText("Liverpool's");
-            URL iconURL = getClass().getResource("liverpool.png");
+            groundText_User.setText("Anfield");
+            URL iconURL = getClass().getResource("logo\\liverpool.png");
             ImageIcon icon = new ImageIcon(iconURL);
-            emblemIMG.setIcon(icon);
-            clubNickname.setText("lvp");
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Reds");
+            clubFounded_User.setText("3 June 1892");
+            clubStdCapacity_User.setText("45,276");
+            clubManager_User.setText("Brendan Rodgers");
         } else if (club == 5) {
-            groundText.setText("Chelsea's");
-            URL iconURL = getClass().getResource("liverpool.png");
+            groundText_User.setText("Stamford Bridge");
+            URL iconURL = getClass().getResource("logo\\chelsea.png");
             ImageIcon icon = new ImageIcon(iconURL);
-            emblemIMG.setIcon(icon);
-            clubNickname.setText("chls");
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("Blue Lions, The Blues, The Pensioners");
+            clubFounded_User.setText("10 March 1905");
+            clubStdCapacity_User.setText("41,837");
+            clubManager_User.setText("José Mourinho");
+        } else if (club == 6) {
+            groundText_User.setText("Elland Road");
+            URL iconURL = getClass().getResource("logo\\leeds.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Peacocks, United, The Whites");
+            clubFounded_User.setText("1919");
+            clubStdCapacity_User.setText("37,890");
+            clubManager_User.setText("Uwe Rösler");
+        } else if (club == 7) {
+            groundText_User.setText("Villa Park");
+            URL iconURL = getClass().getResource("logo\\astonvilla.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Villans, The Claret & Blue Army");
+            clubFounded_User.setText("November 1874");
+            clubStdCapacity_User.setText("42,682");
+            clubManager_User.setText("Tim Sherwood");
+        } else if (club == 8) {
+            groundText_User.setText("White Hart Lane");
+            URL iconURL = getClass().getResource("logo\\tottenham.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setFont(clubNickname_User.getFont().deriveFont(11.0f));
+            clubNickname_User.setText("Spurs, The Lilywhites");
+            clubFounded_User.setText("5 September 1882");
+            clubStdCapacity_User.setText("36,284");
+            clubManager_User.setText("Mauricio Pochettino");
+        } else if (club == 9) {
+            groundText_User.setText("Craven Cottage");
+            URL iconURL = getClass().getResource("logo\\fulham.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Cottagers, The Lilywhites");
+            clubFounded_User.setText("16 August 1879");
+            clubStdCapacity_User.setText("25,700");
+            clubManager_User.setText("Kit Symons");
+        } else if (club == 10) {
+            groundText_User.setText("The Valley");
+            URL iconURL = getClass().getResource("logo\\charlton.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Addicks, Red Robins, The Valiants");
+            clubFounded_User.setText("9 June 1905");
+            clubStdCapacity_User.setText("27,111");
+            clubManager_User.setText("Guy Luzon");
+        } else if (club == 11) {
+            groundText_User.setText("The Boleyn Ground");
+            URL iconURL = getClass().getResource("logo\\westham.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Irons, The Academy of Football");
+            clubFounded_User.setText("1895");
+            clubStdCapacity_User.setText("35,016");
+            clubManager_User.setText("<html><font color='red'><b><i>Vacant</i></b></font></html>");
+        } else if (club == 12) {
+            groundText_User.setText("Stadium of Light");
+            URL iconURL = getClass().getResource("logo\\sunderland.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Black Cats");
+            clubFounded_User.setText("1879");
+            clubStdCapacity_User.setText("49,000");
+            clubManager_User.setText("<html><font color='red'><b><i>Vacant</i></b></font></html>");
+        } else if (club == 13) {
+            groundText_User.setText("Portman Road, Ipswich");
+            URL iconURL = getClass().getResource("logo\\ipswich.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Blues, The Tractor Boys");
+            clubFounded_User.setText("1878");
+            clubStdCapacity_User.setText("30,311");
+            clubManager_User.setText("Mick McCarthy");
+        } else if (club == 14) {
+            groundText_User.setText("Riverside Stadium, Middlesbrough");
+            URL iconURL = getClass().getResource("logo\\middlesbrough.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Boro, Smoggies");
+            clubFounded_User.setText("1876");
+            clubStdCapacity_User.setText("34,742");
+            clubManager_User.setText("Aitor Karanka");
+        } else if (club == 15) {
+            groundText_User.setText("St Mary's Stadium");
+            URL iconURL = getClass().getResource("logo\\southampton.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Saints");
+            clubFounded_User.setText("21 November 1885");
+            clubStdCapacity_User.setText("32,505");
+            clubManager_User.setText("Ronald Koeman");
+        } else if (club == 16) {
+            groundText_User.setText("Goodison Park, Walton, Liverpool");
+            URL iconURL = getClass().getResource("logo\\everton.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Toffees, The Blues, The People's Club");
+            clubFounded_User.setText("1878");
+            clubStdCapacity_User.setText("39,573");
+            clubManager_User.setText("Roberto Martínez");
+        } else if (club == 17) {
+            groundText_User.setText("Macron Stadium, Bolton, Greater Manchester");
+            URL iconURL = getClass().getResource("logo\\bolton.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("The Trotters, The Wanderers, The Whites");
+            clubFounded_User.setText("1874");
+            clubStdCapacity_User.setText("28,723");
+            clubManager_User.setText("Neil Lennon");
+        } else if (club == 18) {
+            groundText_User.setText("Ewood Park, Blackburn, Lancashire");
+            URL iconURL = getClass().getResource("logo\\blackburn.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("Rovers, The Blue and Whites, The Riversiders");
+            clubFounded_User.setText("1875");
+            clubStdCapacity_User.setText("31,367");
+            clubManager_User.setText("Gary Bowyer");
+        } else if (club == 19) {
+            groundText_User.setText("");
+            URL iconURL = getClass().getResource("logo\\derby.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("");
+            clubFounded_User.setText("");
+            clubStdCapacity_User.setText("");
+            clubManager_User.setText("");
+        } else if (club == 20) {
+            groundText_User.setText("");
+            URL iconURL = getClass().getResource("logo\\leicester.png");
+            ImageIcon icon = new ImageIcon(iconURL);
+            emblemIMG_User.setIcon(icon);
+            clubNickname_User.setText("");
+            clubFounded_User.setText("");
+            clubStdCapacity_User.setText("");
+            clubManager_User.setText("");
         }
-    }//GEN-LAST:event_clubNameMenu1ActionPerformed
+    }//GEN-LAST:event_clubNameMenu_UserActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2019,7 +2475,6 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JLabel awayTeam;
     private javax.swing.JLabel awayTeam1;
     private javax.swing.JComboBox awayTeamMenu;
-    private javax.swing.JComboBox awayTeamMenu_Admin;
     private javax.swing.JComboBox awayTeamMenu_User;
     private javax.swing.JPanel awayTeamPanel1;
     private javax.swing.JPanel awayTeamPanelEntry;
@@ -2027,9 +2482,10 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JLabel awayTeamScore;
     private javax.swing.JLabel awayTeamScore1;
     private javax.swing.JComboBox awayTeamScoreMenu;
-    private javax.swing.JTextField awayTeamScoreStatus;
     private javax.swing.JTextField awayTeamScoreStatus_User;
+    private javax.swing.JComboBox awayTeamScore_Recall;
     private javax.swing.JLabel awayTeamScore_User;
+    private javax.swing.JComboBox awayTeam_Recall;
     private javax.swing.JLabel awayTeam_User;
     private javax.swing.JButton backToMenu_Club;
     private javax.swing.JButton backToMenu_ClubUser;
@@ -2042,17 +2498,23 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JButton clubDetails;
     private javax.swing.JButton clubDetailsUser;
     private javax.swing.JLabel clubEmblem;
-    private javax.swing.JLabel clubEmblem1;
+    private javax.swing.JLabel clubEmblem2;
     private javax.swing.JLabel clubFounded;
+    private javax.swing.JLabel clubFounded_User;
     private javax.swing.JLabel clubManager;
+    private javax.swing.JLabel clubManager_User;
     private javax.swing.JLabel clubName;
-    private javax.swing.JLabel clubName1;
+    private javax.swing.JLabel clubName2;
     private javax.swing.JComboBox clubNameMenu;
-    private javax.swing.JComboBox clubNameMenu1;
+    private javax.swing.JComboBox clubNameMenu_User;
     private javax.swing.JLabel clubNickname;
+    private javax.swing.JLabel clubNickname_User;
     private javax.swing.JLabel clubStdCapacity;
+    private javax.swing.JLabel clubStdCapacity_User;
     private javax.swing.JLabel details;
+    private javax.swing.JLabel details1;
     private javax.swing.JLabel emblemIMG;
+    private javax.swing.JLabel emblemIMG_User;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton exitButtonClub;
     private javax.swing.JButton exitButtonClubUser;
@@ -2065,14 +2527,14 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JButton exitButtonmatchEntry;
     private javax.swing.JPanel fieldPanel;
     private javax.swing.JLabel founded;
+    private javax.swing.JLabel founded1;
     private javax.swing.JLabel ground;
-    private javax.swing.JLabel ground1;
+    private javax.swing.JLabel ground2;
     private javax.swing.JTextField groundText;
-    private javax.swing.JTextField groundText1;
+    private javax.swing.JTextField groundText_User;
     private javax.swing.JLabel homeTeam;
     private javax.swing.JLabel homeTeam1;
     private javax.swing.JComboBox homeTeamMenu;
-    private javax.swing.JComboBox homeTeamMenu_Admin;
     private javax.swing.JComboBox homeTeamMenu_User;
     private javax.swing.JPanel homeTeamPanel1;
     private javax.swing.JPanel homeTeamPanelEntry;
@@ -2080,47 +2542,71 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JLabel homeTeamScore;
     private javax.swing.JLabel homeTeamScore1;
     private javax.swing.JComboBox homeTeamScoreMenu;
-    private javax.swing.JTextField homeTeamScoreStatus;
     private javax.swing.JTextField homeTeamScoreStatus_User;
+    private javax.swing.JComboBox homeTeamScore_Recall;
     private javax.swing.JLabel homeTeamScore_User;
+    private javax.swing.JComboBox homeTeam_Recall;
     private javax.swing.JLabel homeTeam_User;
     private javax.swing.JButton loginConfirm;
     private javax.swing.JLabel manager;
+    private javax.swing.JLabel manager1;
     private javax.swing.JButton matchEntry;
     private javax.swing.JButton matchEntryConfirm;
     private javax.swing.JButton matchRecall;
     private javax.swing.JButton matchRecallUser;
     private javax.swing.JLabel nickname;
+    private javax.swing.JLabel nickname1;
     private javax.swing.JLabel notifText;
     private javax.swing.JLabel password;
     private javax.swing.JLabel password1;
     private javax.swing.JTextField passwordAdd;
     private javax.swing.JTextField passwordField;
-    private javax.swing.JButton playClip1;
     private javax.swing.JButton pointTable;
     private javax.swing.JButton pointTableUser;
     private javax.swing.JLabel ptsText;
     private javax.swing.JLabel ptsText1;
     private javax.swing.JLabel ptsText10;
+    private javax.swing.JLabel ptsText10_User;
     private javax.swing.JLabel ptsText11;
+    private javax.swing.JLabel ptsText11_User;
     private javax.swing.JLabel ptsText12;
+    private javax.swing.JLabel ptsText12_User;
     private javax.swing.JLabel ptsText13;
+    private javax.swing.JLabel ptsText13_User;
     private javax.swing.JLabel ptsText14;
+    private javax.swing.JLabel ptsText14_User;
     private javax.swing.JLabel ptsText15;
+    private javax.swing.JLabel ptsText15_User;
     private javax.swing.JLabel ptsText16;
+    private javax.swing.JLabel ptsText16_User;
     private javax.swing.JLabel ptsText17;
+    private javax.swing.JLabel ptsText17_User;
     private javax.swing.JLabel ptsText18;
+    private javax.swing.JLabel ptsText18_User;
     private javax.swing.JLabel ptsText19;
+    private javax.swing.JLabel ptsText19_User;
+    private javax.swing.JLabel ptsText1_User;
     private javax.swing.JLabel ptsText2;
     private javax.swing.JLabel ptsText20;
+    private javax.swing.JLabel ptsText20_User;
     private javax.swing.JLabel ptsText21;
+    private javax.swing.JLabel ptsText21_User;
+    private javax.swing.JLabel ptsText2_User;
     private javax.swing.JLabel ptsText3;
+    private javax.swing.JLabel ptsText3_User;
     private javax.swing.JLabel ptsText4;
+    private javax.swing.JLabel ptsText4_User;
     private javax.swing.JLabel ptsText5;
+    private javax.swing.JLabel ptsText5_User;
     private javax.swing.JLabel ptsText6;
+    private javax.swing.JLabel ptsText6_User;
     private javax.swing.JLabel ptsText7;
+    private javax.swing.JLabel ptsText7_User;
     private javax.swing.JLabel ptsText8;
+    private javax.swing.JLabel ptsText8_User;
     private javax.swing.JLabel ptsText9;
+    private javax.swing.JLabel ptsText9_User;
+    private javax.swing.JLabel ptsText_User;
     private javax.swing.JButton recallMatchConfirm;
     private javax.swing.JButton recallMatchConfirm_User;
     private javax.swing.JLabel recallStatus;
@@ -2132,6 +2618,7 @@ public class EPLGUI extends javax.swing.JFrame {
     private javax.swing.JTextField statusTextRecall_User;
     private javax.swing.JLabel status_User;
     private javax.swing.JLabel stdCapacity;
+    private javax.swing.JLabel stdCapacity1;
     private javax.swing.JLabel username;
     private javax.swing.JLabel username1;
     private javax.swing.JTextField usernameAdd;

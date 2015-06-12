@@ -21,9 +21,9 @@ public class LoginRobot
             br.readLine(); // Skips two text lines in the txt file after the loop
             br.readLine();
             userF = br.readLine(); //Read the line and assign as "userF" string
-            if (userF != EPLGUI.uGUI) { return userF; }
+            if (userF != EPLGUI.uGUI) { return EPLGUI.uGUI; }
         }
-        return userF;
+        return EPLGUI.uGUI;
     }
     public String getPassF() throws FileNotFoundException, IOException
     {
@@ -34,9 +34,9 @@ public class LoginRobot
         {
             br.readLine(); // Skips one line in the txt file after the loop
             passF = br.readLine(); //Read the line and assign as "passF" string
-            if (passF != EPLGUI.pGUI) { return passF; }
+            if (passF != EPLGUI.pGUI) { return EPLGUI.pGUI; }
         }
-        return passF;
+        return EPLGUI.pGUI;
     }
 
     public void setUserF(String userF) { this.userF = userF; }

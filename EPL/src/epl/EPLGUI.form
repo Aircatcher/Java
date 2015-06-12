@@ -675,8 +675,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="homeTeamMenu_Admin" pref="178" max="32767" attributes="0"/>
-                          <Component id="homeTeamScoreStatus" max="32767" attributes="0"/>
+                          <Component id="homeTeam_Recall" pref="178" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="homeTeam1" min="-2" max="-2" attributes="0"/>
@@ -684,6 +683,7 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="homeTeamScore_Recall" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -695,18 +695,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="homeTeam1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="homeTeamMenu_Admin" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeTeam_Recall" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                       <Component id="homeTeamScore1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="homeTeamScoreStatus" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="homeTeamScore_Recall" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="homeTeamMenu_Admin">
+            <Component class="javax.swing.JComboBox" name="homeTeam_Recall">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
@@ -734,7 +734,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeTeamMenu_AdminActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeTeam_RecallActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="homeTeam1">
@@ -747,7 +747,34 @@
                 <Property name="text" type="java.lang.String" value="Home Team Score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="homeTeamScoreStatus">
+            <Component class="javax.swing.JComboBox" name="homeTeamScore_Recall">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="21">
+                    <StringItem index="0" value="0"/>
+                    <StringItem index="1" value="1"/>
+                    <StringItem index="2" value="2"/>
+                    <StringItem index="3" value="3"/>
+                    <StringItem index="4" value="4"/>
+                    <StringItem index="5" value="5"/>
+                    <StringItem index="6" value="6"/>
+                    <StringItem index="7" value="7"/>
+                    <StringItem index="8" value="8"/>
+                    <StringItem index="9" value="9"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                  </StringArray>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -776,10 +803,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="awayTeamScoreStatus" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="awayTeamScore1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -787,7 +813,8 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="awayTeamMenu_Admin" alignment="0" max="32767" attributes="0"/>
+                          <Component id="awayTeam_Recall" alignment="0" pref="196" max="32767" attributes="0"/>
+                          <Component id="awayTeamScore_Recall" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -799,12 +826,12 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="awayTeam1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamMenu_Admin" min="-2" max="-2" attributes="0"/>
+                      <Component id="awayTeam_Recall" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="awayTeamScore1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamScoreStatus" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="awayTeamScore_Recall" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -815,7 +842,7 @@
                 <Property name="text" type="java.lang.String" value="Away Team"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="awayTeamMenu_Admin">
+            <Component class="javax.swing.JComboBox" name="awayTeam_Recall">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
@@ -848,7 +875,34 @@
                 <Property name="text" type="java.lang.String" value="Away Team Score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="awayTeamScoreStatus">
+            <Component class="javax.swing.JComboBox" name="awayTeamScore_Recall">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="21">
+                    <StringItem index="0" value="0"/>
+                    <StringItem index="1" value="1"/>
+                    <StringItem index="2" value="2"/>
+                    <StringItem index="3" value="3"/>
+                    <StringItem index="4" value="4"/>
+                    <StringItem index="5" value="5"/>
+                    <StringItem index="6" value="6"/>
+                    <StringItem index="7" value="7"/>
+                    <StringItem index="8" value="8"/>
+                    <StringItem index="9" value="9"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                  </StringArray>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1288,7 +1342,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="300" max="32767" attributes="0"/>
+                  <EmptySpace pref="175" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_Club" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonClub" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1584,7 +1638,7 @@
                       <Component id="exitButtonUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="signoutButtonUser" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="443" max="32767" attributes="0"/>
+                  <EmptySpace pref="318" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1933,19 +1987,94 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="298" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="300" max="32767" attributes="0"/>
                   <Component id="backToMenu_PointUser" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="exitButtonPointUser" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ptsText1_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText2_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText3_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText4_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText5_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText6_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText7_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText8_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText9_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText10_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText11_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText12_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText14_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText13_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText15_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText16_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText17_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText18_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText21_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText20_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ptsText19_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ptsText_User" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="495" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText1_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText2_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText3_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText4_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText5_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText6_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText7_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText8_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText9_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText10_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText11_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText12_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText13_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText14_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText15_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText16_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText17_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText18_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText19_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText20_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ptsText21_User" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_PointUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonPointUser" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1972,6 +2101,182 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToMenu_PointUserActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JLabel" name="ptsText2_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText3_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 4"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText4_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 5"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText5_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 6"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText6_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 7"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText7_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 8"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText8_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 9"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText9_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 10"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText10_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 11"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText11_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 12"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText1_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText12_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 13"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText13_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 14"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText14_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 15"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText15_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 16"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText16_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 17"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText17_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 18"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText18_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 19"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText19_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 20"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText20_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 21"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ptsText21_User">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Consolas" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Line 22"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="ClubDetailsUser">
@@ -1989,56 +2294,100 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="clubEmblem1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="clubName1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="clubNameMenu1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="271" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="300" max="32767" attributes="0"/>
                           <Component id="backToMenu_ClubUser" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="exitButtonClubUser" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="groundText1" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <Component id="ground1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="playClip1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="clubEmblem2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="clubName2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="clubNameMenu_User" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="emblemIMG_User" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ground2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="details1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="manager1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="stdCapacity1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="founded1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nickname1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="clubManager_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clubStdCapacity_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clubFounded_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clubNickname_User" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="groundText_User" alignment="0" min="-2" pref="239" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="clubName1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ground1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="clubNameMenu1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="groundText1" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="clubName2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="clubNameMenu_User" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ground2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="groundText_User" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="clubEmblem1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="305" max="32767" attributes="0"/>
-                  <Component id="playClip1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="details1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="clubNickname_User" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="clubFounded_User" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="clubStdCapacity_User" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="clubManager_User" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="nickname1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="founded1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="stdCapacity1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="manager1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="clubEmblem2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="emblemIMG_User" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="177" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_ClubUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonClubUser" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2049,37 +2398,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JComboBox" name="clubNameMenu1">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="20">
-                <StringItem index="0" value="Manchester United"/>
-                <StringItem index="1" value="Newcastle"/>
-                <StringItem index="2" value="Arsenal"/>
-                <StringItem index="3" value="Liverpool"/>
-                <StringItem index="4" value="Chelsea"/>
-                <StringItem index="5" value="Leeds"/>
-                <StringItem index="6" value="Aston Villa"/>
-                <StringItem index="7" value="Tottenham"/>
-                <StringItem index="8" value="Fulham"/>
-                <StringItem index="9" value="Charlton"/>
-                <StringItem index="10" value="West Ham"/>
-                <StringItem index="11" value="Sunderland"/>
-                <StringItem index="12" value="Ipswich"/>
-                <StringItem index="13" value="Middlesbrough"/>
-                <StringItem index="14" value="Southampton"/>
-                <StringItem index="15" value="Everton"/>
-                <StringItem index="16" value="Bolton"/>
-                <StringItem index="17" value="Blackburn"/>
-                <StringItem index="18" value="Derby"/>
-                <StringItem index="19" value="Leicester"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clubNameMenu1ActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="backToMenu_ClubUser">
           <Properties>
             <Property name="text" type="java.lang.String" value="Back to Menu"/>
@@ -2096,30 +2414,109 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButtonClubUserActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="playClip1">
+        <Component class="javax.swing.JLabel" name="clubNickname_User">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Play Clip"/>
+            <Property name="text" type="java.lang.String" value="[Nickname]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="clubFounded_User">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="[Founded]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="clubNameMenu_User">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="21">
+                <StringItem index="0" value="Select a Club ..."/>
+                <StringItem index="1" value="Manchester United"/>
+                <StringItem index="2" value="Newcastle"/>
+                <StringItem index="3" value="Arsenal"/>
+                <StringItem index="4" value="Liverpool"/>
+                <StringItem index="5" value="Chelsea"/>
+                <StringItem index="6" value="Leeds"/>
+                <StringItem index="7" value="Aston Villa"/>
+                <StringItem index="8" value="Tottenham"/>
+                <StringItem index="9" value="Fulham"/>
+                <StringItem index="10" value="Charlton"/>
+                <StringItem index="11" value="West Ham"/>
+                <StringItem index="12" value="Sunderland"/>
+                <StringItem index="13" value="Ipswich"/>
+                <StringItem index="14" value="Middlesbrough"/>
+                <StringItem index="15" value="Southampton"/>
+                <StringItem index="16" value="Everton"/>
+                <StringItem index="17" value="Bolton"/>
+                <StringItem index="18" value="Blackburn"/>
+                <StringItem index="19" value="Derby"/>
+                <StringItem index="20" value="Leicester"/>
+              </StringArray>
+            </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playClip1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clubNameMenu_UserActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="groundText1">
+        <Component class="javax.swing.JLabel" name="clubStdCapacity_User">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="[StdCpcity]"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="clubName1">
+        <Component class="javax.swing.JLabel" name="clubManager_User">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="[Manager]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="founded1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Founded:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="groundText_User">
+        </Component>
+        <Component class="javax.swing.JLabel" name="stdCapacity1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Stadium Capacity:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="clubName2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Club Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="ground1">
+        <Component class="javax.swing.JLabel" name="manager1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Manager:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ground2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ground"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="clubEmblem1">
+        <Component class="javax.swing.JLabel" name="nickname1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nickname:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="clubEmblem2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Emblem"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="details1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Details:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emblemIMG_User">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/epl/logo/&quot;))" type="code"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel()"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
