@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class LoginRobot
 {
-    String userF = null;
+    private String userF = null;
     private String passF = null;
     private String br;
     

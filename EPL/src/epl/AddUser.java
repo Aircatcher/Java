@@ -9,22 +9,26 @@ public class AddUser
     public String getuAddF() throws IOException
     {
         BufferedReader br = new BufferedReader(new FileReader("LoginDB.txt"));
-        br.readLine();
-        while (br != null) { br.readLine(); }
-        uAddF = EPLGUI.uAddGUI;
+        uAddF = br.readLine();
+        while (uAddF != null)
+        {
+            br.readLine();
+            uAddF = br.readLine();
+            if (uAddF != EPLGUI.uAddGUI) { return EPLGUI.uAddGUI; }
+        }
         return uAddF;
     }
     public String getpAddF() throws FileNotFoundException, IOException
     {
         BufferedReader br = new BufferedReader(new FileReader("LoginDB.txt"));
         br.readLine();
-        br.readLine();
-        while (br != null)
+        pAddF = br.readLine();
+        while (pAddF != null)
         {
             br.readLine();
-            br.readLine();
+            pAddF = br.readLine();
+            if (pAddF != EPLGUI.pAddGUI) { return EPLGUI.pAddGUI; }
         }
-        pAddF = EPLGUI.pAddGUI;
         return pAddF;
     }
     

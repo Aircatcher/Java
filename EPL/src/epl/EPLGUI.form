@@ -140,23 +140,24 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="matchEntry" pref="95" max="32767" attributes="0"/>
+                      <Component id="addUser" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="matchEntry" min="-2" pref="95" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="matchRecall" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pointTable" min="-2" pref="95" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="clubDetails" min="-2" pref="95" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="addUser" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="signoutButton" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="exitButtonMainMenu" min="-2" pref="128" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="matchRecall" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteUser" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="pointTable" pref="95" max="32767" attributes="0"/>
+                      <Component id="signoutButton" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="exitButtonMainMenu" min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="clubDetails" min="-2" pref="95" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="46" max="32767" attributes="0"/>
               </Group>
@@ -177,6 +178,7 @@
                       <Component id="addUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="signoutButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteUser" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="318" max="32767" attributes="0"/>
               </Group>
@@ -238,6 +240,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signoutButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteUser">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete User"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteUserActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -306,7 +316,7 @@
                       <Component id="status" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="statusText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="293" max="32767" attributes="0"/>
+                  <EmptySpace pref="168" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_Entry" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonmatchEntry" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -337,7 +347,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="homeTeamMenu" pref="174" max="32767" attributes="0"/>
+                          <Component id="homeTeam_Entry" pref="174" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="homeTeam" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -345,7 +355,7 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="homeTeamScoreMenu" alignment="0" max="32767" attributes="0"/>
+                          <Component id="homeTeamScore_Entry" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -357,28 +367,28 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="homeTeam" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="homeTeamMenu" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeTeam_Entry" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="homeTeamScore" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="homeTeamScoreMenu" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeTeamScore_Entry" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="homeTeamMenu">
+            <Component class="javax.swing.JComboBox" name="homeTeam_Entry">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
-                    <StringItem index="0" value="Manchester United"/>
+                    <StringItem index="0" value="Manchester_United"/>
                     <StringItem index="1" value="Newcastle"/>
                     <StringItem index="2" value="Arsenal"/>
                     <StringItem index="3" value="Liverpool"/>
                     <StringItem index="4" value="Chelsea"/>
                     <StringItem index="5" value="Leeds"/>
-                    <StringItem index="6" value="Aston Villa"/>
+                    <StringItem index="6" value="Aston_Villa"/>
                     <StringItem index="7" value="Tottenham"/>
                     <StringItem index="8" value="Fulham"/>
                     <StringItem index="9" value="Charlton"/>
@@ -396,7 +406,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeTeamMenuActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeTeam_EntryActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="homeTeam">
@@ -404,7 +414,7 @@
                 <Property name="text" type="java.lang.String" value="Team Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="homeTeamScoreMenu">
+            <Component class="javax.swing.JComboBox" name="homeTeamScore_Entry">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="21">
@@ -484,7 +494,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="awayTeamMenu" pref="186" max="32767" attributes="0"/>
+                          <Component id="awayTeam_Entry" pref="186" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="awayTeamScore" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -492,7 +502,7 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="awayTeamScoreMenu" alignment="0" max="32767" attributes="0"/>
+                          <Component id="awayTeamScore_Entry" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -504,11 +514,11 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="awayTeam" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamMenu" min="-2" max="-2" attributes="0"/>
+                      <Component id="awayTeam_Entry" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="awayTeamScore" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamScoreMenu" min="-2" max="-2" attributes="0"/>
+                      <Component id="awayTeamScore_Entry" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -520,17 +530,17 @@
                 <Property name="text" type="java.lang.String" value="Away Team"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="awayTeamMenu">
+            <Component class="javax.swing.JComboBox" name="awayTeam_Entry">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
-                    <StringItem index="0" value="Manchester United"/>
+                    <StringItem index="0" value="Manchester_United"/>
                     <StringItem index="1" value="Newcastle"/>
                     <StringItem index="2" value="Arsenal"/>
                     <StringItem index="3" value="Liverpool"/>
                     <StringItem index="4" value="Chelsea"/>
                     <StringItem index="5" value="Leeds"/>
-                    <StringItem index="6" value="Aston Villa"/>
+                    <StringItem index="6" value="Aston_Villa"/>
                     <StringItem index="7" value="Tottenham"/>
                     <StringItem index="8" value="Fulham"/>
                     <StringItem index="9" value="Charlton"/>
@@ -553,7 +563,7 @@
                 <Property name="text" type="java.lang.String" value="Away Team Score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="awayTeamScoreMenu">
+            <Component class="javax.swing.JComboBox" name="awayTeamScore_Entry">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="21">
@@ -649,7 +659,7 @@
                       <Component id="recallStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="statusTextRecall" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="292" max="32767" attributes="0"/>
+                  <EmptySpace pref="167" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_Recall" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonRecall" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1530,19 +1540,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="username1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="usernameAdd" min="-2" pref="186" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="password1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="passwordAdd" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="username1" min="-2" max="-2" attributes="0"/>
+                          <Component id="password1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="passwordAdd" max="32767" attributes="0"/>
+                          <Component id="usernameAdd" pref="186" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1556,8 +1562,8 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="password1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="passwordAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="password1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1570,17 +1576,96 @@
                 <Property name="text" type="java.lang.String" value="Username:"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="usernameAdd">
+            </Component>
+            <Component class="javax.swing.JTextField" name="passwordAdd">
+            </Component>
             <Component class="javax.swing.JLabel" name="password1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Password:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="usernameAdd">
-            </Component>
-            <Component class="javax.swing.JTextField" name="passwordAdd">
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="DeleteUser">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+          <CardConstraints cardName="card13"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="deleteUserConfirm" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
+                  <Component id="backToMenu_delUser" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="exitButton_delUser" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jScrollPane1" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="backToMenu_delUser" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="exitButton_delUser" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteUserConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="userDatabase">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="exitButton_delUser">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exit"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButton_delUserActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="backToMenu_delUser">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Back to Menu"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToMenu_delUserActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteUserConfirm">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteUserConfirmActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="MainMenuUser">
@@ -1701,20 +1786,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="status_User" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="statusTextRecall_User" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="homeTeamPanel_MR_User" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="awayTeamPanel_MR_User" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="status_User" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="statusTextRecall_User" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1743,13 +1828,13 @@
                       <Component id="homeTeamPanel_MR_User" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="recallMatchConfirm_User" min="-2" max="-2" attributes="0"/>
+                  <Component id="recallMatchConfirm_User" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="status_User" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="statusTextRecall_User" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="292" max="32767" attributes="0"/>
+                  <EmptySpace pref="167" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backToMenu_MR_User" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exitButtonRecall_User" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1772,11 +1857,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="homeTeamMenu_User" alignment="0" pref="178" max="32767" attributes="0"/>
-                          <Component id="homeTeamScoreStatus_User" alignment="0" max="32767" attributes="0"/>
+                          <Component id="homeTeamRecall_User" alignment="0" pref="178" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="homeTeam_User" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1784,6 +1868,7 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="homeTeamScoreRecall_User" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1795,18 +1880,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="homeTeam_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="homeTeamMenu_User" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeTeamRecall_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                       <Component id="homeTeamScore_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="homeTeamScoreStatus_User" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeTeamScoreRecall_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="homeTeamMenu_User">
+            <Component class="javax.swing.JComboBox" name="homeTeamRecall_User">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
@@ -1844,7 +1929,34 @@
                 <Property name="text" type="java.lang.String" value="Home Team Score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="homeTeamScoreStatus_User">
+            <Component class="javax.swing.JComboBox" name="homeTeamScoreRecall_User">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="21">
+                    <StringItem index="0" value="0"/>
+                    <StringItem index="1" value="1"/>
+                    <StringItem index="2" value="2"/>
+                    <StringItem index="3" value="3"/>
+                    <StringItem index="4" value="4"/>
+                    <StringItem index="5" value="5"/>
+                    <StringItem index="6" value="6"/>
+                    <StringItem index="7" value="7"/>
+                    <StringItem index="8" value="8"/>
+                    <StringItem index="9" value="9"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                  </StringArray>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1873,10 +1985,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="awayTeamScoreStatus_User" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="awayTeamScore_User" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1884,7 +1995,8 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="awayTeamMenu_User" alignment="0" max="32767" attributes="0"/>
+                          <Component id="awayTeamRecall_User" alignment="0" pref="196" max="32767" attributes="0"/>
+                          <Component id="awayTeamScoreRecall_User" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1896,11 +2008,11 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="awayTeam_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamMenu_User" min="-2" max="-2" attributes="0"/>
+                      <Component id="awayTeamRecall_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="awayTeamScore_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="awayTeamScoreStatus_User" min="-2" max="-2" attributes="0"/>
+                      <Component id="awayTeamScoreRecall_User" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1912,7 +2024,7 @@
                 <Property name="text" type="java.lang.String" value="Away Team"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="awayTeamMenu_User">
+            <Component class="javax.swing.JComboBox" name="awayTeamRecall_User">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="20">
@@ -1945,7 +2057,34 @@
                 <Property name="text" type="java.lang.String" value="Away Team Score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="awayTeamScoreStatus_User">
+            <Component class="javax.swing.JComboBox" name="awayTeamScoreRecall_User">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="21">
+                    <StringItem index="0" value="0"/>
+                    <StringItem index="1" value="1"/>
+                    <StringItem index="2" value="2"/>
+                    <StringItem index="3" value="3"/>
+                    <StringItem index="4" value="4"/>
+                    <StringItem index="5" value="5"/>
+                    <StringItem index="6" value="6"/>
+                    <StringItem index="7" value="7"/>
+                    <StringItem index="8" value="8"/>
+                    <StringItem index="9" value="9"/>
+                    <StringItem index="10" value="10"/>
+                    <StringItem index="11" value="11"/>
+                    <StringItem index="12" value="12"/>
+                    <StringItem index="13" value="13"/>
+                    <StringItem index="14" value="14"/>
+                    <StringItem index="15" value="15"/>
+                    <StringItem index="16" value="16"/>
+                    <StringItem index="17" value="17"/>
+                    <StringItem index="18" value="18"/>
+                    <StringItem index="19" value="19"/>
+                    <StringItem index="20" value="20"/>
+                  </StringArray>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -2018,10 +2157,7 @@
                       <Component id="ptsText21_User" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="ptsText20_User" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="ptsText19_User" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="ptsText_User" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="ptsText_User" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>

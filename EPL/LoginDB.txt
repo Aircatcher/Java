@@ -1,5 +1,5 @@
-//USERNAME
-//PASSWORD
+//First row = USERNAME
+//Second row = PASSWORD
 admin
 admin
 user
