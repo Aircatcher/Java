@@ -13,11 +13,9 @@ This is a basic program about Premier League.
 For both admin and user menu, abilities that is available are Match Entry,
 Match Recall, Point Table (League Table), and Club Details
 
-For admin menu, can add a user.
+Additional feature such as adding or deleting a user (admin only)
 
 And the basic abilities such as signing out and exit the program.
-
-
 
 <h5><i>For the moment, input username and password as "user"</i></h>
 
