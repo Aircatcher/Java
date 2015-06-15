@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.PopupMenu;
 import java.io.*;
+import static java.lang.Thread.sleep;
 import java.net.URL;
 import javax.swing.*;
 
@@ -2151,9 +2152,7 @@ public class EPLGUI extends javax.swing.JFrame {
             PrintWriter prtWrite = new PrintWriter(new BufferedWriter (new FileWriter("LoginDB.txt", true) ) );
             BufferedReader br = new BufferedReader(new FileReader("LoginDB.txt"));
             if (uAddGUI == null && pAddGUI == null)
-            {
-                JOptionPane.showMessageDialog(null, "Username and/or password cannot be empty", "Error", JOptionPane.OK_OPTION);
-            }
+            { JOptionPane.showMessageDialog(null, "Username and/or password cannot be empty", "Error", JOptionPane.OK_OPTION); }
             else if (pAF != null) //This will check whether the last line (password line) on txt is filled or not
             {
                 prtWrite.println(); //Print breakline to txt
@@ -2162,14 +2161,13 @@ public class EPLGUI extends javax.swing.JFrame {
                 prtWrite.close(); //Close the printWriter cmd and show message below
                 JOptionPane.showMessageDialog(null, "User \"" + uAddGUI + "\" is added to database", "Done", JOptionPane.OK_OPTION);
             }
-            else if (uAF == "\n") //This will check whether the 'username line' on txt is filled with 'breakline' or not
+            else if ( uAF.equals("") ) //This will check whether the 'username line' on txt is filled with 'empty breakline' or not
             {
                 prtWrite.println(uAddGUI); //Print String "uAddGUI" to txt and set breakline
                 prtWrite.print(pAddGUI); //Print String "pAddGUI" to txt
                 prtWrite.close(); //Close the printWriter cmd and show message below
                 JOptionPane.showMessageDialog(null, "User \"" + uAddGUI + "\" is added to database", "Done", JOptionPane.OK_OPTION);
             }
-                
         }
         catch (IOException ex) { Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex); }
     }//GEN-LAST:event_addConfirmActionPerformed
@@ -2191,6 +2189,7 @@ public class EPLGUI extends javax.swing.JFrame {
         MainMenuAdmin.setVisible(false);
         setTitle("EPL - Login");
         setSize(257, 158);
+        notifText.setText("You've signed out. Please login to continue");
         LoginForm.setVisible(true); // Back to Login Form
     }//GEN-LAST:event_signoutButtonActionPerformed
 
@@ -2301,6 +2300,7 @@ public class EPLGUI extends javax.swing.JFrame {
         MainMenuUser.setVisible(false);
         setTitle("EPL - Login");
         setSize(257, 158);
+        notifText.setText("You've signed out. Please login to continue");        
         LoginForm.setVisible(true); // Back to Login Form
     }//GEN-LAST:event_signoutButtonUserActionPerformed
 
